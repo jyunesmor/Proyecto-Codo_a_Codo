@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect,  jsonify, url_for
+from flask import Flask, render_template, request,jsonify
 from flask_cors import CORS
-import db
-import Usuario
-from datetime import datetime, date
+import Usuario 
+
+
 user = Usuario.Usuario()
 
 app = Flask(__name__, static_folder='../assets' ,template_folder= '../src')
