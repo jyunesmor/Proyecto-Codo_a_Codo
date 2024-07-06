@@ -1,4 +1,3 @@
-// or via CommonJS
 const url_usuarios = "http://localhost:5000/";
 let codigo = " ";
 
@@ -19,8 +18,7 @@ function cargaPagina() {
 			} else {
 				const tableBody = document.querySelector("#msgVacio");
 				const row = document.createElement("h1");
-				row.innerHTML =
-					"No hay Usuarios cargados, por favor intentalo más tarde";
+				row.innerHTML = "No hay Usuarios cargados";
 				tableBody.appendChild(row);
 			}
 		})
@@ -207,7 +205,6 @@ function obtenerUsuario(codigo) {
 			}
 		})
 		.then((user) => {
-			document.getElementById("form_admin").style.display = "block";
 			codigo = user.codigo;
 			nombre = user.nombre;
 			apellido = user.apellido;
@@ -218,16 +215,26 @@ function obtenerUsuario(codigo) {
 
 			fechaNacimiento = new Date(fechaNacimiento);
 
+			/* Obtener checkboc seleccionado */
+
 			document.getElementById("codigoMod").value = codigo;
 			document.getElementById("nombreModificar").value = capitalize(nombre);
 			document.getElementById("apellidoModificar").value = capitalize(apellido);
 			document.getElementById("fecha_nacimientoModificar").value =
 				fechaNacimiento.toISOString().substring(0, 10);
-			document.getElementById("bpais").value = capitalize(pais);
+			document.getElementById("paisModificar").value = capitalize(user.pais);
 			document.getElementById("emailModificar").value = email;
-			document.getElementById("ValueSex").value = capitalize(sexo);
+			document
+				.getElementsByName("sexoModificar")
+				.forEach(
+					(check) =>
+						(check.checked =
+							check.value == capitalize(user.sexo) ? true : false)
+				);
 
-			btn_modificar.value = `Modificar datos de : ${user.apellido}, ${user.nombre}`;
+			btn_modificar.value = `Modificar datos de : ${capitalize(
+				apellido
+			)}, ${capitalize(nombre)}`;
 		})
 		.catch(function (error) {
 			Swal.fire({

@@ -9,18 +9,9 @@
 			href="../static/public/favicon.ico"
 			type="image/x-icon"
 		/>
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static' , filename='../static/css/estilos.css')}}"
-		/>
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static' , filename='../static/css/responsividad.css')}}"
-		/>
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static' , filename='../static/css/contacto.css')}}"
-		/>
+		<link rel="stylesheet" href="../static/css/estilos.css" />
+		<link rel="stylesheet" href="../static/css/responsividad.css" />
+		<link rel="stylesheet" href="../static/css/contacto.css" />
 		<script
 			src="https://kit.fontawesome.com/d7e5186ff3.js"
 			crossorigin="anonymous"
@@ -71,7 +62,7 @@
 						competiciones exclusivas.
 					</h5>
 				</div>
-				<form id="form_admin" name="contacto">
+				<form id="form_admin" name="contacto" enctype="multipart/form-data">
 					<div id="input_group" class="input_group">
 						<div id="input_nombre" class="input">
 							<label for="nombre">Nombre:</label>

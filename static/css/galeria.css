@@ -32,6 +32,10 @@ body #volver img {
 	display: none;
 }
 
+#volver:hover {
+	cursor: pointer;
+}
+
 @media (300px <= width < 829px) {
 	body main .galery-cont .galery-card img {
 		width: 250px;

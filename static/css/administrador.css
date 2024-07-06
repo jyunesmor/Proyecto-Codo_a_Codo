@@ -2,8 +2,13 @@ body main .container {
 	margin: 45px;
 }
 
+body main .container #msgVacio h1 {
+	text-align: center;
+	font-size: 3.5rem;
+}
+
 body main .container #form_admin {
-	display: none;
+	/* display: none; */
 }
 
 body main .container .form_cont .text_form h1 {
@@ -14,6 +19,17 @@ body main .container .form_cont .text_form h1 {
 body main .container .table tbody .one {
 	display: flex;
 	justify-content: space-around;
+}
+
+body main .container .table tbody .one a span {
+	color: red;
+	filter: drop-shadow(2px 1px 3px black);
+}
+
+body main .container .table tbody .one a span:hover {
+	cursor: pointer;
+	transform: scale(1.4);
+	transition: 200ms;
 }
 
 body main .container .table thead tr th {
@@ -52,8 +68,13 @@ body main .form_cont .text_form .inputCod {
 }
 
 body main .form_cont .text_form .inputCod input {
-	font-size: 0.7rem;
+	font-size: 1.2rem;
 	text-align: center;
+	border: none;
+}
+
+body main .form_cont .text_form .inputCod input:hover {
+	cursor: no-drop;
 }
 
 body main .container input {
